@@ -1,0 +1,27 @@
+.option-container {
+    padding-inline-start:.5em;
+    padding-inline-end: 3em;
+    font-weight:bold;
+    cursor:pointer;
+    display:inline-block;
+}
+.col {
+    padding: .4em 1.3em;
+}
+.color-dark {
+    background: #2885C4;
+}
+.color-light {
+    background: #57B3F1;
+}
+.customWidthClass{
+    flex: 0 0 75px;
+ }
+.container{
+    padding-top:2em;
+    padding-block-end: 3em;
+}
+.inner{
+    padding-top:1em;
+    padding-block-end: 2em;
+}
