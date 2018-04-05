@@ -1,0 +1,21 @@
+<mdb-navbar SideClass="navbar navbar-expand-lg navbar-dark bg-blue scrolling-navbar ie-nav" [containerInside]="true">
+  <links>
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active waves-light" routerLinkActive="active current" mdbRippleRadius>
+                <a class="menuLink" (click)="gotoPage('Poll')">Poll</a>
+        </li>
+        <li class="nav-item active waves-light" routerLinkActive="active current" mdbRippleRadius>
+            <a class="menuLink" (click)="gotoPage('Login')">Login</a>
+        </li>
+        <li class="nav-item waves-light"routerLinkActive="active current" mdbRippleRadius>
+            <a class="menuLink" (click)="gotoPage('SignUp')">Sign Up</a>
+        </li>
+      </ul>
+  </links>
+</mdb-navbar>
+<div class="text-center pb-5">
+    <a class="navbar-brand" href="#">
+        <img class="animated swing"src="assets\images\votOnlogo.png" height="150" width="150" alt=""> 
+    </a>
+</div> 
+

@@ -9,6 +9,7 @@ import { AppComponent } from './app.component';
 import { PollComponent } from './poll/poll.component';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
+import { AppHeaderComponent } from '../components/common';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { SignupComponent } from './signup/signup.component';
     AppComponent,
     PollComponent,
     LoginComponent,
-    SignupComponent
+    SignupComponent,
+    AppHeaderComponent
   ],
   imports: [
     BrowserModule,

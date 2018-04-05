@@ -7,6 +7,11 @@ import { SignupComponent } from './signup/signup.component';
 const routes: Routes = [
   {
     path: '',
+    redirectTo: '/poll',
+    pathMatch: 'full'
+  },
+  {
+    path: 'poll',
     component: PollComponent
   },
   {

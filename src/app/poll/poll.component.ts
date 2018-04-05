@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Params } from '@angular/router';
 
 @Component({
   selector: 'app-poll',
@@ -15,18 +15,27 @@ export class PollComponent implements OnInit {
   optionView: boolean;
   questionView: boolean;
 
-  constructor(route: ActivatedRoute) {
-    route.params.subscribe(val => {
-      this.ngOnInit();
+  constructor(private route: ActivatedRoute) {
+    
+  }
+
+  ngOnInit(){
+    this.route.params.subscribe((params: Params) => {
+      console.log('in params change subscription', params);
+      if (!params['view'] || params['view'] === 'question'){
+        this.optionView = false;
+        this.questionView = true;
+      }
+        // params['startOver'] = false;
+      // } else {
+      //   this.optionView = false;
+      //   this.questionView = true;
+      // }
     });
+    
   }
 
-  ngOnInit() {
-    this.optionView = false;
-    this.questionView = true;
-  }
-
-  postQuestion() {
+  postQuestion = () => {
     this.optionView = true;
     this.questionView = false;
   }
