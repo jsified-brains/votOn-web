@@ -9,6 +9,11 @@ import { AppComponent } from './app.component';
 import { PollComponent } from './poll/poll.component';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
+import { OptionComponent } from './option/option.component';
+import { DataService } from './data.service';
+import { AppHeaderComponent } from './app-header/app-header.component';
+import { HomeComponent } from './home/home.component';
+import { MaincomponentComponent } from './maincomponent/maincomponent.component';
 
 
 @NgModule({
@@ -16,7 +21,11 @@ import { SignupComponent } from './signup/signup.component';
     AppComponent,
     PollComponent,
     LoginComponent,
-    SignupComponent
+    SignupComponent,
+    OptionComponent,
+    AppHeaderComponent,
+    HomeComponent,
+    MaincomponentComponent
   ],
   imports: [
     BrowserModule,
@@ -26,7 +35,7 @@ import { SignupComponent } from './signup/signup.component';
     MDBBootstrapModule.forRoot()
   ],
   schemas: [ NO_ERRORS_SCHEMA ],
-  providers: [],
+  providers: [ DataService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,0 +1,22 @@
+.containermain{
+    padding-top:2em;
+    padding-block-end: 3em;
+    height: 100%;
+    background:url("/assets/images/home-bg.jpeg");
+    background-size: cover;
+}
+.col {
+    padding: .4em 1.3em;
+}
+.captionText {
+    font-weight:bold;
+    padding:.5em;
+    color: #FBF4F5;
+}
+@media (min-width: 768px) {
+    .containermain {
+        
+        margin-top: 10px;
+        
+    }
+}

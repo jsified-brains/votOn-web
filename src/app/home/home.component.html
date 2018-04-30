@@ -1,0 +1,31 @@
+
+    <div class="containermain">
+        
+            
+            <div class="container text-center white-text" style="padding-top:100px">
+                    <p class="h3 text-center mb-4">Easy Polls, Faster Decisions </p><br><br>
+                    <div class="text-center">
+                            <button type="submit" class="btn" (click)="poll()"><strong> Create a poll</strong></button>
+                    </div>
+            </div>
+                
+                
+            <div class="container fixed-bottom">
+                <div class="row">
+                
+                    <div class="col" *ngFor="let image of images">
+                        <figure class="figure" style="width:60%">
+                            <img src="assets\images\{{image.icon}}" class="figure-img img-fluid rounded-circle" alt="...">
+                            <figcaption class="figure-caption captionText">{{image.featureText}}</figcaption>
+                        </figure>
+                    </div>
+                                
+                </div>
+            </div>
+            
+            
+        
+    </div>
+
+
+

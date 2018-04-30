@@ -1,44 +1,45 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { Component, OnInit, Output, EventEmitter  } from '@angular/core';
+import { Router } from '@angular/router';
+import { DataService } from '../data.service';
 
 @Component({
   selector: 'app-poll',
   templateUrl: './poll.component.html',
   styleUrls: ['./poll.component.scss']
 })
+
 export class PollComponent implements OnInit {
 
-  questionText: String;
-  optionText: String;
-  options: String[] = [];
-  optionCount: Number = 0;
-  optionView: boolean;
-  questionView: boolean;
 
-  constructor(route: ActivatedRoute) {
-    route.params.subscribe(val => {
-      this.ngOnInit();
-    });
-  }
+  polls = [
+    {
+      'featureText': 'where to meet',
+      'icon': 'meeting.png'
+    },
+    {
+      'featureText': 'which movie to go',
+      'icon': 'cinemaPopcorn.png'
+    },
+    {
+      'featureText': 'which one should I buy',
+      'icon': 'pick.png'
+    },
+    {
+      'featureText': 'what to cook for dinner',
+      'icon': 'dinner-icon.png'
+    },
+    {
+      'featureText': 'where to plan our next vacation',
+      'icon': 'beach.png'
+    },
+    {
+      'featureText': 'create a new poll from scratch',
+      'icon': 'poll.png'
+    }
+  ];
 
-  ngOnInit() {
-    this.optionView = false;
-    this.questionView = true;
-  }
+  constructor(private router: Router, private data: DataService) {}
 
-  postQuestion() {
-    this.optionView = true;
-    this.questionView = false;
-  }
+  ngOnInit() {}
 
-  addOption() {
-    this.options.push(this.optionText);
-    this.optionText = '';
-    this.optionCount = this.options.length;
-  }
-
-  deleteOption(option: String) {
-    this.optionCount = this.options.length - 1;
-    this.options.splice(this.options.indexOf(option), 1);
-  }
 }

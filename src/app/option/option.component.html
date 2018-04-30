@@ -1,0 +1,36 @@
+<div class="container d-flex align-items-center d-flex justify-content-center example z-depth-5">
+  <div class="container">
+      <div class="color-dark row">
+          <div class="col">
+                  <p class="h3 text-center mb-4"> {{ question }} </p>
+          </div>
+      </div>
+      <div class="color-light row inner">
+          <div class="col-4">
+              <p class="h6 mb-4"> Add Options: </p>
+              <div class="form-inline">
+                  <div class="md-form form-group">
+                      <i class="fa fa-pencil prefix grey-text"></i>
+                      <input name="optiontxt" type="text" placeholder="Type your option.." [(ngModel)]="optionText">
+                  </div>
+                  <div class="md-form form-group">
+                      <button type="button" class="icon" (click)="addOption()">+</button>
+                  </div>
+              </div>
+          </div>
+          
+          <div class="col">
+              <div class="option-container" *ngFor="let option of options">
+                  <label>
+                      {{ option }}
+                  </label>
+                  <button class="icon" type="button" (click)="deleteOption(option)">
+                      <i class="fa fa-trash" aria-hidden="true"></i> </button>
+              </div>
+              <div class="float-right">
+                  <button type="submit" class="btn">Share with friends</button>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
