@@ -3,7 +3,7 @@
     
         <div class="col-6 col-sm-4" *ngFor="let poll of polls">
             <figure class="figure">
-                <img src="assets\images\{{poll.icon}}" class="figure-img img-thumbnail img-fluid" alt="...">
+                <img src="assets\images\{{poll.icon}}" class="figure-img img-thumbnail img-fluid" (click)="openOption(poll.icon)" alt="...">
                 <figcaption class="figure-caption captionText">{{poll.featureText}}</figcaption>
             </figure>
         </div>

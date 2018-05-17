@@ -10,7 +10,8 @@ import { DataService } from '../data.service';
 
 export class PollComponent implements OnInit {
 
-
+  createView: string;
+  mainText: string;
   polls = [
     {
       'featureText': 'where to meet',
@@ -42,4 +43,11 @@ export class PollComponent implements OnInit {
 
   ngOnInit() {}
 
+  openOption(option) {
+    if (option === 'poll.png') {
+      this.data.changeText('Add Options');
+      this.data.changeView('optionView');
+      this.router.navigateByUrl('/maincomponent');
+    }
+  }
 }
