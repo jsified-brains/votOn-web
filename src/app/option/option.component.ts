@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { DataService } from '../data.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-option',
@@ -13,7 +14,7 @@ export class OptionComponent implements OnInit {
   options: String[] = [];
   optionCount: Number = 0;
 
-  constructor(private data: DataService) {}
+  constructor(private router: Router, private data: DataService) {}
 
   ngOnInit() {
     this.data.currentQuestion.subscribe(question => this.question = question);
@@ -30,4 +31,12 @@ export class OptionComponent implements OnInit {
     this.options.splice(this.options.indexOf(option), 1);
   }
 
+  setDateTime() {
+    this.data.changeText('Polling Ends On:');
+    this.data.changeView('dateView');
+    this.router.navigateByUrl('/maincomponent');
+  }
+
 }
+
+

@@ -1,29 +1,28 @@
 
-  <div class="container">
-      <div class="color-light row inner">
-          <div class="col">
-              <div class="form-inline">
-                  <div class="md-form form-group">
-                      <i class="fa fa-pencil prefix grey-text"></i>
-                      <input name="optiontxt" type="text" placeholder="Type your option.." [(ngModel)]="optionText">
-                  </div>
-                  <div class="md-form form-group">
-                      <button type="button" class="icon" (click)="addOption()">+</button>
-                  </div>
-              </div>
-          </div>
+  <div class="container center">
+      
+        <!-- <div class="md-form">
+                <i class="fa fa-pencil prefix grey-text"></i>
+                <input name="questiontxt" class="md-form form-lg" type="text" placeholder="Type your Question.." [(ngModel)]="questionText">
+        </div> -->
+
+        <div class="input-group mb-2 mr-sm-2">
+                <input type="text" class="form-control" name="optiontxt" placeholder="Type your option.." [(ngModel)]="optionText">
+                <div class="input-group-postpend">
+                        <button type="submit" class="icon" (click)="addOption()">+</button>
+                </div>
+        </div>
+      
+        <div class="text-center w-100 p-1 option-container" *ngFor="let option of options">
+            <label class="h4-responsive white-text">
+                {{ option }}
+            </label>
+            <button class="icon icon-btn" type="button" (click)="deleteOption(option)">
+                <i class="fa fa-trash" aria-hidden="true"></i> </button>
+        </div>
+        <div>
+            <button type="submit" class="cbtn" (click)="setDateTime()">Set Date and Time</button>
+        </div>
           
-          <div class="col">
-              <div class="option-container" *ngFor="let option of options">
-                  <label>
-                      {{ option }}
-                  </label>
-                  <button class="icon" type="button" (click)="deleteOption(option)">
-                      <i class="fa fa-trash" aria-hidden="true"></i> </button>
-              </div>
-              <div class="float-right">
-                  <button type="submit" class="btn">Share with friends</button>
-              </div>
-          </div>
-      </div>
+      
   </div>

@@ -1,0 +1,25 @@
+<div class="container center">
+
+  <form class="form-inline">
+    <div class="form-group">
+      <div class="input-group">
+        <input class="form-control" placeholder="yyyy-mm-dd" name="dp" [(ngModel)]="model" ngbDatepicker #d="ngbDatepicker">
+        <div class="input-group-append">
+          <button class="btn btn-outline-secondary" (click)="d.toggle()" type="button">
+                <img src="assets\images\calendar.jpg" style="width: 2.5rem; height: 2rem; cursor: pointer;"/>
+              </button>
+        </div>
+      </div>
+    </div>
+  </form>
+
+
+
+  <ngb-timepicker class="btn-outline-primary" [(ngModel)]="time" [meridian]="meridian"></ngb-timepicker>
+  <div>
+    <button type="submit" class="icon" (click)="addDetails()">Add Details</button>
+    <button type="submit" class="icon" (click)="addParticipants()">Add Participants</button>
+  </div>
+
+
+</div>

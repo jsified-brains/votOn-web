@@ -1,0 +1,66 @@
+
+<!--  Button trigger modal-->
+  <div class="float-right mb-6">
+    <button type="button" class="cbtn btnmodal"  (click)="basicModal.show()">+</button>
+  </div>
+  
+  <!-- Modal -->
+  
+  <div mdbModal #basicModal="mdb-modal" class="modal fade" id="basicExample" tabindex="-1" role="dialog" aria-labelledby="myBasicModalLabel" aria-hidden="true" [config]="{backdrop: false, ignoreBackdropClick: true}">
+    <div class="modal-dialog modal-sm cascading-modal" role="document">
+      <div class="modal-content">
+        <div class="modal-header light-blue darken-3 white-text">
+          <button type="button" class="close pull-right" (click)="basicModal.hide()" aria-label="Close">
+              <span aria-hidden="true">x</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="md-form mb-5">
+            <i class="fa fa-user prefix grey-text"></i>
+            <input type="text" id="form3" name="nametxt" class="form-control validate" placeholder="Your name" [(ngModel)]="name">
+          </div>
+
+          <div class="md-form mb-4">
+              <i class="fa fa-envelope prefix grey-text"></i>
+              <input type="email" id="form2" name="emailtxt" class="form-control" required placeholder="Your email" aria-describedby="emailHelp" [(ngModel)]="email">
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="cbtn"  (click)="addParticipant()">Add</button>
+        </div>
+      </div>
+    </div>
+  </div>
+ 
+<div class="participantcontainer">
+  <div class="p-1 participant-container" *ngFor="let participant of participants">
+    <i class="fa fa-user prefix grey-text fa-1x" aria-hidden="true"></i> 
+    <label class="h4-responsive white-text">
+        {{ participant }} 
+    </label>
+    <button class="icon icon-btn" type="button" (click)="deleteParticipant(participant)">
+      <i class="fa fa-trash" aria-hidden="true"></i> </button>
+  </div>  
+  
+</div>
+  
+  <footer class="page-footer font-small pt-4 mt-6">
+    
+      <!-- Footer Links -->
+      <div class="container-fluid text-center text-md-left">
+    
+        <!-- Grid row -->
+        <div class="row">
+    
+          <!-- Grid column -->
+          <div class="col-md-6 mt-md-0 mt-3">
+            <!-- Content -->
+            <input class="form-check-input" type="checkbox" value="" id="defaultCheckbox1">
+            <!-- <label class="form-check-label" for="defaultCheckbox1"> -->
+            <h5>Keep results anonymous</h5>
+            <p>don't show who voted for what in results.</p>
+    
+          </div>
+        </div>
+      </div>
+  </footer>

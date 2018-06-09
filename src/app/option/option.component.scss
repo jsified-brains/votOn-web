@@ -1,15 +1,13 @@
 .option-container {
-    padding-inline-start:.5em;
-    padding-inline-end: 3em;
     font-weight:bold;
     cursor:pointer;
     display:inline-block;
+    border: 3px solid #C7B1E5;
+    background: #57B3F1;
+    margin-top: 0.5em;
 }
 .col {
     padding: .4em 1.3em;
-}
-.color-dark {
-    background: #2885C4;
 }
 .color-light {
     background: #57B3F1;
@@ -24,4 +22,13 @@
 .inner{
     padding-top:1em;
     padding-block-end: 2em;
+}
+.icon-btn{
+    float: right;
+}
+.center {
+    margin: auto;
+    width: 50%;
+    
+    padding: 10px;
 }

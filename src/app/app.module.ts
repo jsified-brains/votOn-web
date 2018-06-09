@@ -14,6 +14,11 @@ import { DataService } from './data.service';
 import { AppHeaderComponent } from './app-header/app-header.component';
 import { HomeComponent } from './home/home.component';
 import { MaincomponentComponent } from './maincomponent/maincomponent.component';
+import { DateTimeComponent } from './date-time/date-time.component';
+import { NgbModal, NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { AddDetailComponent } from './add-detail/add-detail.component';
+import { AddparticipantComponent } from './addparticipant/addparticipant.component';
+
 
 
 @NgModule({
@@ -25,14 +30,18 @@ import { MaincomponentComponent } from './maincomponent/maincomponent.component'
     OptionComponent,
     AppHeaderComponent,
     HomeComponent,
-    MaincomponentComponent
+    MaincomponentComponent,
+    DateTimeComponent,
+    AddDetailComponent,
+    AddparticipantComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpModule,
-    MDBBootstrapModule.forRoot()
+    MDBBootstrapModule.forRoot(),
+    NgbModule.forRoot()
   ],
   schemas: [ NO_ERRORS_SCHEMA ],
   providers: [ DataService ],

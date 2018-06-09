@@ -1,0 +1,22 @@
+.center {
+    margin: auto;
+    width: 50%;
+    
+    padding: 40px;
+}
+.btn {
+    padding: 0.2px
+}
+
+::ng-deep .btn-outline-primary {
+    border: 0px solid #E7EBF1 !important;
+    color: #E7EBF1 !important;
+}
+
+.form-control {
+    width: 70%;
+}
+
+.form-inline{
+    padding-bottom: 40px;
+}

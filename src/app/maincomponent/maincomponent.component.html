@@ -1,6 +1,6 @@
 
   <div class="container main d-flex align-items-center d-flex justify-content-center example z-depth-1">
-      <div class="container">
+      <div class="container mb-2em">
         <p class="h3 text-center mb-4"> {{ mainText }} </p>
         
       <div *ngIf="view=='createView'">
@@ -8,8 +8,24 @@
       </div>
 
       <div *ngIf="view=='optionView'">
+        <div class="md-form">
+              <i class="fa fa-pencil prefix grey-text"></i>
+              <input name="questiontxt" class="md-form form-lg" type="text" placeholder="Type your Question.." [(ngModel)]="questionText">
+        </div>
         <app-option></app-option>
       </div>
+
+      <div *ngIf="view=='dateView'">
+          <app-date-time></app-date-time>
+      </div>   
+      
+      <div *ngIf="view=='addDetailView'">
+        <app-add-detail></app-add-detail>
+      </div>  
+
+      <div *ngIf="view=='addParticipantView'">
+        <app-addparticipant></app-addparticipant>
+      </div>      
 
       </div>
   </div>

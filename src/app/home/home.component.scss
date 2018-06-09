@@ -7,6 +7,8 @@
 }
 .col {
     padding: .4em 1.3em;
+    display: flex;
+    overflow: hidden;
 }
 .captionText {
     font-weight:bold;
@@ -19,4 +21,13 @@
         margin-top: 10px;
         
     }
+}
+
+.myimg{
+    
+    width: 80px;
+    height: 80px;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
