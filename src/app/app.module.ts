@@ -18,6 +18,7 @@ import { DateTimeComponent } from './date-time/date-time.component';
 import { NgbModal, NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AddDetailComponent } from './add-detail/add-detail.component';
 import { AddparticipantComponent } from './addparticipant/addparticipant.component';
+import { FeatureService } from '../common/services';
 
 
 
@@ -44,7 +45,7 @@ import { AddparticipantComponent } from './addparticipant/addparticipant.compone
     NgbModule.forRoot()
   ],
   schemas: [ NO_ERRORS_SCHEMA ],
-  providers: [ DataService ],
+  providers: [ DataService, FeatureService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
