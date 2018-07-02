@@ -25,7 +25,7 @@ export class DateTimeComponent implements OnInit {
   }
 
   addDetails() {
-    this.data.changeText("Your (Poll Admin's) Details:");
+    this.data.changeText(`Your (Poll Admin's) Details:`);
     this.data.changeView('addDetailView');
     this.router.navigateByUrl('/maincomponent');
   }

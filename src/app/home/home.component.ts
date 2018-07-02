@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { DataService } from '../data.service';
+import { FeatureService } from '../../common/services';
+import { Feature } from '../../common/interfaces';
 
 @Component({
   selector: 'app-home',
@@ -8,36 +10,39 @@ import { DataService } from '../data.service';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-
-  images = [
-    {
-      'featureText': 'easily create poll',
-      'icon': 'poll.png'
-    },
-    {
-      'featureText': 'send to friends',
-      'icon': 'share.png'
-    },
-    {
-      'featureText': 'real time results',
-      'icon': 'realtime.png'
-    },
-    {
-      'featureText': 'faster decisions',
-      'icon': 'faster.png'
-    },
-    {
-      'featureText': 'signin to save and reuse poll',
-      'icon': 'signin.png'
-    }
-  ];
+  images: Feature[] = [];
+  // images = [
+  //   {
+  //     'featureText': 'easily create poll',
+  //     'icon': 'poll.png'
+  //   },
+  //   {
+  //     'featureText': 'send to friends',
+  //     'icon': 'share.png'
+  //   },
+  //   {
+  //     'featureText': 'real time results',
+  //     'icon': 'realtime.png'
+  //   },
+  //   {
+  //     'featureText': 'faster decisions',
+  //     'icon': 'faster.png'
+  //   },
+  //   {
+  //     'featureText': 'signin to save and reuse poll',
+  //     'icon': 'signin.png'
+  //   }
+  // ];
 
   createView: string;
   mainText: string;
+  // private featureService: FeatureService;
 
-  constructor( private router: Router, private data: DataService) { }
+  constructor( private router: Router, private data: DataService, private featureService: FeatureService) { }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.getFeatures();
+  }
 
   poll() {
     this.createView = 'createView';
@@ -45,6 +50,16 @@ export class HomeComponent implements OnInit {
     this.data.changeText(this.mainText);
     this.data.changeView(this.createView);
     this.router.navigateByUrl('/maincomponent');
+  }
+
+  getFeatures() {
+    console.log('calling getFeature service');
+     this.featureService
+    .getFeatures()
+    .subscribe(responseData => {
+        this.images = responseData;
+    },
+    error => console.log(error));
   }
 
 }
