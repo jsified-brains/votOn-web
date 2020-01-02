@@ -21,7 +21,6 @@ import { AddparticipantComponent } from './addparticipant/addparticipant.compone
 import { FeatureService } from '../common/services';
 
 
-
 @NgModule({
   declarations: [
     AppComponent,

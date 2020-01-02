@@ -3,6 +3,8 @@ import { Router } from '@angular/router';
 import { DataService } from '../data.service';
 import { FeatureService } from '../../common/services';
 import { Feature } from '../../common/interfaces';
+import { callLifecycleHooksChildrenFirst } from '@angular/core/src/view/provider';
+import { IfObservable } from 'rxjs/observable/IfObservable';
 
 @Component({
   selector: 'app-home',
@@ -11,6 +13,7 @@ import { Feature } from '../../common/interfaces';
 })
 export class HomeComponent implements OnInit {
   images: Feature[] = [];
+  
   // images = [
   //   {
   //     'featureText': 'easily create poll',
